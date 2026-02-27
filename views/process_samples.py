@@ -533,17 +533,17 @@ def extract_fields_positive(report_text, df_name):
             "benzilpenicilina": benzilpenicilina[0],
             "mic_benzilpenicilina": benzilpenicilina[1],
             "ampicilina_gram_positivo": ampicilina_gram_positivo[0],
-            "mic_ampicilina_gram_positivo": ampicilina_gram_positivo[1],
+            "mic_ampicilinagp": ampicilina_gram_positivo[1],
             "oxacilina": oxacilina[0],
             "mic_oxacilina": oxacilina[1],
             "ceftarolina_pneumonia": ceftarolina_pneumonia[0],
-            "mic_ceftarolina_pneumonia": ceftarolina_pneumonia[1],
+            "mic_ceftarolina": ceftarolina_pneumonia[1],
             "ceftarolina_outra": ceftarolina_outra[0],
             "mic_ceftarolina_outra": ceftarolina_outra[1],
             "estreptomicina": estreptomicina[0],
             "mic_estreptomicina": estreptomicina[1],
             "gentamicina_gram_positivo": gentamicina_gram_positivo[0],
-            "mic_gentamicina_gram_positivo": gentamicina_gram_positivo[1],
+            "mic_gentamicinagp": gentamicina_gram_positivo[1],
             "levofloxacina_gram_positivo": levofloxacina_gram_positivo[0],
             "mic_levofloxacina_gram_positivo": levofloxacina_gram_positivo[1],
             "eritromicina": eritromicina[0],
@@ -559,13 +559,13 @@ def extract_fields_positive(report_text, df_name):
             "vancomicina": vancomicina[0],
             "mic_vancomicina": vancomicina[1],
             "tigeciclina_gram_positivo": tigeciclina_gram_positivo[0],
-            "mic_tigeciclina_gram_positivo": tigeciclina_gram_positivo[1],
+            "mic_tigeciclinagp": tigeciclina_gram_positivo[1],
             "rifampicina": rifampicina[0],
             "mic_rifampicina": rifampicina[1],
             "trimetoprima_sulfametaxazol_gram_positivo": trimetoprima_sulfametaxazol_gram_positivo[0],
-            "mic_trimetoprima_sulfametaxazol_gram_positivo": trimetoprima_sulfametaxazol_gram_positivo[1],
+            "mic_trimetoprima_gram_posi": trimetoprima_sulfametaxazol_gram_positivo[1],
             "nitrofurantoina_gram_positivo": nitrofurantoina_gram_positivo[0],
-            "mic_nitrofurantoina_gram_positivo": nitrofurantoina_gram_positivo[1],
+            "mic_nitrofurantoinagp": nitrofurantoina_gram_positivo[1],
             "gram_positivo": gram_positivo,
             "amoxicilina": amoxicilina[0],
             "mic_amoxicilina": amoxicilina[1],
@@ -582,7 +582,7 @@ def extract_fields_positive(report_text, df_name):
             "ampicilina_sulbactam": ampicilina_sulbactam[0],
             "mic_ampicilina_sulbactam": ampicilina_sulbactam[1],
             "piperacilina_tazobactam": piperacilina_tazobactam[0],
-            "mic_piperacilina_tazobactam": piperacilina_tazobactam[1],
+            "mic_piperacilina_tazobacta": piperacilina_tazobactam[1],
             "cefoxitina": cefoxitina[0],
             "mic_cefoxitina": cefoxitina[1],
             "cefuroxima": cefuroxima[0],
@@ -598,7 +598,7 @@ def extract_fields_positive(report_text, df_name):
             "imipenem_relebactam": imipenem_relebactam[0],
             "mic_imipenem_relebactam": imipenem_relebactam[1],
             "gn_levofloxacina": gn_levofloxacina[0],
-            "mic_gn_levofloxacina": gn_levofloxacina[1],
+            "mic_levofloxacina": gn_levofloxacina[1],
             "meropenem": meropenem[0],
             "mic_meropenem": meropenem[1],
             "meropenem_vaborbactam": meropenem_vaborbactam[0],
@@ -612,48 +612,48 @@ def extract_fields_positive(report_text, df_name):
             "tigeciclina": tigeciclina[0],
             "mic_tigeciclina": tigeciclina[1],
             "trimetoprim_sulfametozol": trimetoprim_sulfametozol[0],
-            "mic_trimetoprim_sulfametozol": trimetoprim_sulfametozol[1],
+            "mic_trimetoprim_sulfametox": trimetoprim_sulfametozol[1],
             "colistina": colistina[0],
             "mic_colistina": colistina[1],
             "ceftriaxona": ceftriaxona[0],
             "mic_ceftriaxona": ceftriaxona[1],
             "gram_negativo_gn_hospitala": gram_negativo_gn_hospitala,
             "ampicilina_ambul": ampicilina_ambul[0],
-            "mic_ampicilina_ambul": ampicilina_ambul[1],
+            "mic_ampicilina_am": ampicilina_ambul[1],
             "amoxicilina_cido_clavul_nico": amoxicilina_cido_clavul_nico[0],
-            "mic_amoxicilina_cido_clavul_nico": amoxicilina_cido_clavul_nico[1],
+            "mic_amoxicilina_cido_clavu": amoxicilina_cido_clavul_nico[1],
             "piperacilina_tazobactam_ambul": piperacilina_tazobactam_ambul[0],
-            "mic_piperacilina_tazobactam_ambul": piperacilina_tazobactam_ambul[1],
+            "mic_piperacilina_tazo": piperacilina_tazobactam_ambul[1],
             "cefalexina": cefalexina[0],
             "mic_cefalexina": cefalexina[1],
             "cefalotina": cefalotina[0],
             "mic_cefalotina": cefalotina[1],
             "cefuroxima_ambul": cefuroxima_ambul[0],
-            "mic_cefuroxima_ambul": cefuroxima_ambul[1],
+            "mic_cefuroxima_gn": cefuroxima_ambul[1],
             "cefuroxima_axetil": cefuroxima_axetil[0],
             "mic_cefuroxima_axetil": cefuroxima_axetil[1],
             "ceftriaxona_ambul": ceftriaxona_ambul[0],
-            "mic_ceftriaxona_ambul": ceftriaxona_ambul[1],
+            "mic_ceftriaxonagn": ceftriaxona_ambul[1],
             "cefepima_ambul": cefepima_ambul[0],
-            "mic_cefepima_ambul": cefepima_ambul[1],
+            "mic_cefepimagn": cefepima_ambul[1],
             "ertapenem_ambul": ertapenem_ambul[0],
-            "mic_ertapenem_ambul": ertapenem_ambul[1],
+            "mic_ertapenemgn": ertapenem_ambul[1],
             "meropenem_ambul": meropenem_ambul[0],
-            "mic_meropenem_ambul": meropenem_ambul[1],
+            "mic_meropenemgn": meropenem_ambul[1],
             "amicacina_ambul": amicacina_ambul[0],
-            "mic_amicacina_ambul": amicacina_ambul[1],
+            "mic_amicacinagn": amicacina_ambul[1],
             "gentamicina_ambul": gentamicina_ambul[0],
-            "mic_gentamicina_ambul": gentamicina_ambul[1],
+            "mic_gentamicinagn": gentamicina_ambul[1],
             "cido_nalidixico": cido_nalidixico[0],
             "mic_cido_nalidixico": cido_nalidixico[1],
             "ciprofloxacino": ciprofloxacino[0],
-            "mic_ciprofloxacino": ciprofloxacino[1],
+            "mic_ciprofloxaxacino": ciprofloxacino[1],
             "norfloxacino": norfloxacino[0],
             "mic_norfloxacino": norfloxacino[1],
             "nitrofurantoina": nitrofurantoina[0],
             "mic_nitrofurantoina": nitrofurantoina[1],
             "trimetoprima_sulfametoxazol": trimetoprima_sulfametoxazol[0],
-            "mic_trimetoprima_sulfametoxazol": trimetoprima_sulfametoxazol[1],
+            "mic_trimetoprima_sulfameto": trimetoprima_sulfametoxazol[1],
             "levofloxacina": levofloxacina[0],
             "mic_levofloxacina": levofloxacina[1],
             "gram_negativo_gn_ambulat_rio": gram_negativo_gn_ambulat_rio,
@@ -951,36 +951,36 @@ def filter_blood(df, substitution_departments=substitution_departments, blood_co
     aztreonam mic_aztreonam cefiderocol mic_cefiderocol ceftalozone_tazobactam 
     mic_ceftalozone_tazobactam ceftazidime_avibactam mic_ceftazidime_avibactam 
     ampicilina mic_ampicilina ampicilina_sulbactam mic_ampicilina_sulbactam 
-    piperacilina_tazobactam mic_piperacilina_tazobactam cefoxitina mic_cefoxitina 
+    piperacilina_tazobactam mic_piperacilina_tazobacta cefoxitina mic_cefoxitina 
     cefuroxima mic_cefuroxima ceftazidima mic_ceftazidima cefepima mic_cefepima 
     ertapenem mic_ertapenem imipenem mic_imipenem imipenem_relebactam 
-    mic_imipenem_relebactam gn_levofloxacina mic_gn_levofloxacina meropenem 
+    mic_imipenem_relebactam gn_levofloxacina mic_levofloxacina meropenem 
     mic_meropenem meropenem_vaborbactam mic_meropenem_vaborbactam amicacina 
     mic_amicacina gentamicina mic_gentamicina ciprofloxacina mic_ciprofloxacina 
-    tigeciclina mic_tigeciclina trimetoprim_sulfametozol mic_trimetoprim_sulfametozol 
+    tigeciclina mic_tigeciclina trimetoprim_sulfametozol mic_trimetoprim_sulfametox 
     colistina mic_colistina ceftriaxona mic_ceftriaxona gram_negativo_gn_ambulat_rio 
-    ampicilina_ambul mic_ampicilina_ambul amoxicilina_cido_clavul_nico 
-    mic_amoxicilina_cido_clavul_nico piperacilina_tazobactam_ambul 
-    mic_piperacilina_tazobactam_ambul cefalexina mic_cefalexina cefalotina 
-    mic_cefalotina cefuroxima_ambul mic_cefuroxima_ambul cefuroxima_axetil 
-    mic_cefuroxima_axetil ceftriaxona_ambul mic_ceftriaxona_ambul cefepima_ambul 
-    mic_cefepima_ambul ertapenem_ambul mic_ertapenem_ambul meropenem_ambul 
-    mic_meropenem_ambul amicacina_ambul mic_amicacina_ambul gentamicina_ambul 
-    mic_gentamicina_ambul cido_nalidixico mic_cido_nalidixico ciprofloxacino 
-    mic_ciprofloxacino norfloxacino mic_norfloxacino nitrofurantoina 
-    mic_nitrofurantoina trimetoprima_sulfametoxazol mic_trimetoprima_sulfametoxazol 
+    ampicilina_ambul mic_ampicilina_am amoxicilina_cido_clavul_nico 
+    mic_amoxicilina_cido_clavu piperacilina_tazobactam_ambul 
+    mic_piperacilina_tazo cefalexina mic_cefalexina cefalotina 
+    mic_cefalotina cefuroxima_ambul mic_cefuroxima_gn cefuroxima_axetil 
+    mic_cefuroxima_axetil ceftriaxona_ambul mic_ceftriaxonagn cefepima_ambul 
+    mic_cefepimagn ertapenem_ambul mic_ertapenemgn meropenem_ambul 
+    mic_meropenemgn amicacina_ambul mic_amicacinagn gentamicina_ambul 
+    mic_gentamicinagn cido_nalidixico mic_cido_nalidixico ciprofloxacino 
+    mic_ciprofloxaxacino norfloxacino mic_norfloxacino nitrofurantoina 
+    mic_nitrofurantoina trimetoprima_sulfametoxazol mic_trimetoprima_sulfameto 
     levofloxacina mic_levofloxacina gram_positivo benzilpenicilina 
-    mic_benzilpenicilina ampicilina_gram_positivo mic_ampicilina_gram_positivo 
-    oxacilina mic_oxacilina ceftarolina_pneumonia mic_ceftarolina_pneumonia 
+    mic_benzilpenicilina ampicilina_gram_positivo mic_ampicilinagp 
+    oxacilina mic_oxacilina ceftarolina_pneumonia mic_ceftarolina 
     ceftarolina_outra mic_ceftarolina_outra estreptomicina mic_estreptomicina 
-    gentamicina_gram_positivo mic_gentamicina_gram_positivo 
+    gentamicina_gram_positivo mic_gentamicinagp 
     levofloxacina_gram_positivo mic_levofloxacina_gram_positivo eritromicina 
     mic_eritromicina clindamicina mic_clindamicina linezolid mic_linezolid 
     daptomicina mic_daptomicina teicoplanina mic_teicoplanina vancomicina 
-    mic_vancomicina tigeciclina_gram_positivo mic_tigeciclina_gram_positivo 
+    mic_vancomicina tigeciclina_gram_positivo mic_tigeciclinagp 
     rifampicina mic_rifampicina trimetoprima_sulfametaxazol_gram_positivo 
-    mic_trimetoprima_sulfametaxazol_gram_positivo nitrofurantoina_gram_positivo 
-    mic_nitrofurantoina_gram_positivo para_leveduras fluconazol mic_fluconazol 
+    mic_trimetoprima_gram_posi nitrofurantoina_gram_positivo 
+    mic_nitrofurantoinagp para_leveduras fluconazol mic_fluconazol 
     voriconazol mic_voriconazol caspofungina mic_caspofungina micafungina 
     mic_micafungina anfotericina_b mic_anfotericina fluocitosina mic_fluocitosina 
     qual_tipo_de_material outro_tipo_de_material desfecho_do_paciente observa_es 
