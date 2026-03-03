@@ -17,13 +17,17 @@ Candida parapsilosis, 15
 Serratia marcescens, 16
 Acinetobacter baumannii, 17
 Morganela morganii, 18
+Morganella morganii ssp morganii, 18
+Morganella morganii, 18
 Candida tropicalis, 19
 Providencia stuartii, 20
 Micrococus sp, 21
+Micrococcus spp, 21
 Staphylococcus coagulase negativo, 22
 Candida famata, 23
 Staphylococcus hominis, 24
 Complexo Burkholderia cepacia, 25
+Burkholderia cepacia, 25
 Pseudomonas putida, 26
 Streptococcus mitis, 27
 Enterococcus faecium, 28
@@ -33,10 +37,13 @@ Streptococcus do grupo viridans, 31
 Staphylococcus saprophyticus, 32
 Citrobacter freundii, 33
 Kocuria sp, 34
+Kocuria varians, 34
+Kocuria kristinae, 34
 Staphylococcus spp, 35
 Klebsiella aerogenes, 36
 Enterobacter spp, 37
 Acinetobacter spp, 38
+Acinetobacter ursingii, 38
 Citrobacter spp, 39
 Citrobacter koseri, 40
 Proteus spp, 41
@@ -46,6 +53,8 @@ Enterococcus gallinarum, 44
 Pseudomonas stutzeri, 45
 Salmonella spp, 46
 Streptococcus spp, 47
+Streptococcus dysgalactiae ssp equisimilis, 47
+Streptococcus sanguinis, 47
 Acinetobacter lwoffii, 48
 Pseudomonas mendocina, 49
 Enterococcus spp, 50
@@ -60,6 +69,7 @@ Candida krusei, 58
 Citrobacter amalonaticus, 59
 Serratia odorifera, 60
 Salmonella entérica, 61
+Salmonella enterica ssp enterica, 61
 Citrobacter farmeri, 62
 Cronobacter sakazakii, 63
 Kluyvera intermedia, 64
