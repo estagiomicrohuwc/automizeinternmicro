@@ -7,7 +7,7 @@ from io import StringIO
 # Variáveis
 github_token = st.secrets["github"]["token"]
 repo = "afonsolsj/LABMICRO"
-paths = {"departments": "assets/files/departments.csv", "microorganisms_gnb": "assets/files/microorganisms_gnb.csv", "microorganisms_gpb": "assets/files/microorganisms_gpb.csv", "microorganisms_gpc": "assets/files/microorganisms_gpc.csv", "microorganisms_fy": "assets/files/microorganisms_fy.csv", "material_general": "assets/files/materials_general.csv", "material_vigilance": "assets/files/materials_vigilance.csv", "material_smear_microscopy": "assets/files/materials_smear_microscopy.csv"}
+paths = {"departments": "assets/files/departments.csv", "microorganisms_gnb": "assets/files/microorganisms_gnb.csv", "microorganisms_gpb": "assets/files/microorganisms_gpb.csv", "microorganisms_gpc": "assets/files/microorganisms_gpc.csv", "microorganisms_fy": "assets/files/microorganisms_fy.csv", "material_general": "assets/files/materials_general.csv", "material_vigilance": "assets/files/materials_vigilance.csv", "material_smear_microscopy": "assets/files/materials_smear_microscopy.csv", "blood_collection": "assets/files/blood_collection.csv", "microorganism_blood_contaminated": "assets/files/microorganism_blood_contaminated.csv", "microorganism_blood_positive": "assets/files/microorganism_blood_positive.csv"}
 
 # Funções
 def load_csv_from_github(file_path):
@@ -52,7 +52,7 @@ def render_legend_item(badge_text, icon, color, description):
 
 # Código principal da página
 st.title("Informações")
-tab1, tab2, tab3, tab4 = st.tabs(["Setores", "Materiais", "Microrganismos", "Legendas"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Setores", "Materiais", "Microrganismos", "Hemocultura", "Legendas"])
 with tab1:
     render_editor("Completo Hospitalar", "departments", "yellow", "department", ":material/home_health:")
 with tab2:
@@ -65,6 +65,10 @@ with tab3:
     render_editor("Bacilos Gram Positivos", "microorganisms_gpb", "grey", "gpb", ":material/counter_3:")
     render_editor("Levedura", "microorganisms_fy", "yellow", "fy", ":material/counter_4:")
 with tab4:
+    render_editor("Vias de coleta", "blood_collection", "orange", "blood", ":material/counter_1:")
+    render_editor("Microorganismos p/ amostras positivas", "microorganism_blood_positive", "violet", "bloodpos", ":material/counter_2:")
+    render_editor("Microorganismos p/ amostras contamidas", "microorganism_blood_contaminated", "grey", "bloodneg", ":material/counter_3:")
+with tab5:
     with st.expander("Cores", icon=":material/colors:"):
         render_legend_item("Ambulatório", ":material/check_circle:", "green",
                            "Paciente em ambulatório. Não é necessário verificação.")
