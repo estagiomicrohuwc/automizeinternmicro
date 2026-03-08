@@ -673,7 +673,7 @@ def extract_fields_positive(report_text, df_name):
             "qual_outro_mecanismo_de_re": other_mechanism,
             "tem_mecanismo_resist_ncia": tem_mecanismo_resist_ncia,
             "realizou_teste_imunogromat": realizou_teste_imunogromat,
-            "apresenta_gene_resistencia": apresenta_gene_resistencia(report_lower)
+            "apresenta_gene_resistencia": apresenta_gene_resistencia(report_lower),
             "apresenta_carbapenase": get_carbapenase(report_lower)
         }
 def extract_fields(report_text, df_name):
