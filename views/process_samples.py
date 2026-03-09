@@ -390,7 +390,7 @@ def extract_fields_positive(report_text, df_name):
                 return 1
             else:
                 return ""
-        def get_cim_result(report_lower):
+        def get_cim_result(report_lower, micro_final):
             text = report_lower.lower().replace("\n", " ")
             mcim = ""
             ecim = ""
@@ -402,6 +402,8 @@ def extract_fields_positive(report_text, df_name):
                 ecim = 1
             elif re.search(r'\becim\b.*?negativo', text):
                 ecim = 2
+            elif "pseudomonas aeruginosa" in micro_final.lower():
+                ecim = 3
             return mcim, ecim
         def result_ast(value):
             if not value:
@@ -517,9 +519,9 @@ def extract_fields_positive(report_text, df_name):
             antibiograma_realizado = 2
         else:
             antibiograma_realizado = 1
-        mechanism, other_mechanism = get_mechanism(oxacilina, meropenem, imipenem, ertapenem, vancomicina, micro_final)
+        mechanism, other_mechanism = get_mechanism(oxacilina[0], meropenem[0], imipenem[0], ertapenem[0], vancomicina[0], micro_final)
         tem_mecanismo_resist_ncia = 1 if mechanism != "" else 2
-        code_mcim, code_ecim = get_cim_result(report_lower)
+        code_mcim, code_ecim = get_cim_result(report_lower, micro_final)
         realizou_teste_imunogromat = get_imunocromat(report_lower) if mechanism in (2, 6) else ""
         return {
             "resultado": 1,
