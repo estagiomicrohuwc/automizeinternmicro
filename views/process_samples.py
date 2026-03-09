@@ -394,16 +394,18 @@ def extract_fields_positive(report_text, df_name):
             text = report_lower.lower().replace("\n", " ")
             mcim = ""
             ecim = ""
+            tem_mcim = "mcim" in text
             if re.search(r'\bmcim\b.*?positivo', text):
                 mcim = 1
             elif re.search(r'\bmcim\b.*?negativo', text):
                 mcim = 2
-            if re.search(r'\becim\b.*?positivo', text):
-                ecim = 1
-            elif re.search(r'\becim\b.*?negativo', text):
-                ecim = 2
-            elif "pseudomonas aeruginosa" in micro_final.lower():
+            if tem_mcim and "pseudomonas aeruginosa" in micro_final.lower():
                 ecim = 3
+            else:
+                if re.search(r'\becim\b.*?positivo', text):
+                    ecim = 1
+                elif re.search(r'\becim\b.*?negativo', text):
+                    ecim = 2
             return mcim, ecim
         def result_ast(value):
             if not value:
