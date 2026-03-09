@@ -235,15 +235,13 @@ def fill_outcome(pdf_file, dfs, column_name_search="column_aux1", col_date1="col
     for df in dfs:
         if col_outcome not in df.columns:
             df[col_outcome] = ""
+        df[col_outcome] = 3
         for idx, row in df.iterrows():
             patient_name = str(row[column_name_search]).strip()
             if patient_name:
                 for line in lines:
-                    if patient_name in line:
-                        if re.search(r"\bO\s+" + re.escape(patient_name) + r"\b", line):
-                            df.at[idx, col_outcome] = 2
-                        else:
-                            df.at[idx, col_outcome] = 3
+                    if re.search(r"\bO\s+" + re.escape(patient_name) + r"\b", line):
+                        df.at[idx, col_outcome] = 2
                         break
         for col in [column_name_search, col_date1, col_date2]:
             if col in df.columns:
