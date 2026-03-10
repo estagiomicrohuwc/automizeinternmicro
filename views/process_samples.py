@@ -478,14 +478,14 @@ def extract_fields_positive(report_text, df_name):
                 return 2
         def get_carbapenase(report_lower):
             if "dupla carbapenemase" in report_lower:
-                return 13
-            if re.search(r'\bmetalo\b', report_lower):
                 return 6
+            if re.search(r'\bmetalo\b', report_lower):
+                return 3
             if re.search(r'\bserino\b', report_lower):
                 return 2
-            if "não detectado" in report_lower or "nao detectado" in report_lower:
-                return 8
-            if "não enzimático" in report_lower or "nao enzimatico" in report_lower:
+            if "(bluecarba) - não reagente" in report_lower or "(bluecarba) - nao reagente" in report_lower:
+                return 0
+            if "enzimático não detectável" in report_lower or "enzimatico nao detectavel" in report_lower:
                 return 1
             return ""
         isolate_micro = get_value("ISOLADO1 :") or get_value("ISOLADO2 :") 
