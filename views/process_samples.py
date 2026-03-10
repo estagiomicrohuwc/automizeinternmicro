@@ -300,6 +300,24 @@ def extract_fields_positive(report_text, df_name):
                 value = line.split(":", 1)[-1].strip()
                 return value
             return ""
+        def format_time(raw_text, df_name, column_name=""):
+            match = re.search(r"(\d{2}/\d{2}/\d{4})(?:\s+(\d{2}:\d{2}))?", raw_text)
+            if not match:
+                return ""
+            date_str = match.group(1)
+            time_str = match.group(2) or "00:00"
+            try:
+                date_obj = datetime.strptime(f"{date_str} {time_str}", "%d/%m/%Y %H:%M")
+            except ValueError:
+                return ""
+            if df_name in ("general", "vigilance"):
+                return date_obj.strftime("%Y-%m-%d %H:%M")
+            elif df_name == "smear":
+                if column_name == "data_da_libera_o":
+                    date_obj += timedelta(days=1)
+                return date_obj.strftime("%Y-%m-%d")
+            else:
+                return date_obj.strftime("%Y-%m-%d %H:%M")
         def classify_microorganism(value):
             if not value:
                 return ""
@@ -475,7 +493,7 @@ def extract_fields_positive(report_text, df_name):
             if "imunocromatografia" in report_lower or "imunocromatográfico" in report_lower:
                 return 1
             else:
-                return 2
+                return 0
         def get_carbapenase(report_lower):
             if "dupla carbapenemase" in report_lower:
                 return 6
@@ -660,6 +678,7 @@ def extract_fields_positive(report_text, df_name):
             "qual_outro_mecanismo_de_re": other_mechanism,
             "tem_mecanismo_resist_ncia": tem_mecanismo_resist_ncia,
             "realizou_teste_imunogromat": realizou_teste_imunogromat,
+            "data_do_teste_imunogromato": format_time(get_value("Dt.Liberação:"), df_name, "data_da_libera_o"),
             "apresenta_gene_resistencia": apresenta_gene_resistencia(report_lower),
             "apresenta_carbapenase": get_carbapenase(report_lower)
         }
