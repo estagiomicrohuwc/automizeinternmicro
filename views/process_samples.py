@@ -491,9 +491,9 @@ def extract_fields_positive(report_text, df_name):
                 return (*valores, gram_positivo)
         def get_imunocromat(report_lower):
             if "imunocromatografia" in report_lower or "imunocromatográfico" in report_lower:
-                return 1
+                return 1, format_time(get_value("Dt.Liberação:"), df_name, "data_da_libera_o")
             else:
-                return 0
+                return 0, ""
         def get_carbapenase(report_lower):
             if "dupla carbapenemase" in report_lower:
                 return 6
@@ -677,8 +677,8 @@ def extract_fields_positive(report_text, df_name):
             "qual_gene_de_mecanismo_res": mechanism,
             "qual_outro_mecanismo_de_re": other_mechanism,
             "tem_mecanismo_resist_ncia": tem_mecanismo_resist_ncia,
-            "realizou_teste_imunogromat": realizou_teste_imunogromat,
-            "data_do_teste_imunogromato": format_time(get_value("Dt.Liberação:"), df_name, "data_da_libera_o"),
+            "realizou_teste_imunogromat": realizou_teste_imunogromat[0],
+            "data_do_teste_imunogromato": realizou_teste_imunogromat[1],
             "apresenta_gene_resistencia": apresenta_gene_resistencia(report_lower),
             "apresenta_carbapenase": get_carbapenase(report_lower)
         }
